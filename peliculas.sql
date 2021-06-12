@@ -1,7 +1,8 @@
 
+-- 1. Crear base de datos llamada películas.
 CREATE DATABASE peliculas;
 \c peliculas;
-
+-- 2. Cargar ambos archivos a su tabla correspondiente.
 CREATE TABLE peliculas (
     id INT,
     Pelicula VARCHAR(255),
