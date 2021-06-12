@@ -1,5 +1,6 @@
+
 CREATE DATABASE peliculas;
-\c peliculas
+\c peliculas;
 
 CREATE TABLE peliculas (
     id INT,
@@ -14,6 +15,7 @@ CREATE TABLE reparto (
         id SERIAL ,
         id_peliculas INT,
         actor VARCHAR(50),
+        PRIMARY KEY(id),
         FOREIGN KEY(id_peliculas) REFERENCES peliculas(id)
 );
 
@@ -32,7 +34,7 @@ SELECT * FROM reparto WHERE actor = 'Harrison Ford';
 
 --Indicar las películas estrenadas entre los años 1990 y 1999 ordenadas por título de
 --manera ascendente.
-SELECT pelicula FROM peliculas WHERE Año_estreno BETWEEN '1990' AND '1999' ORDER BY pelicula ASC;
+SELECT pelicula,Año_estreno FROM peliculas WHERE Año_estreno BETWEEN '1990' AND '1999' ORDER BY pelicula ASC;
 
 --  Hacer una consulta SQL que muestre los títulos con su longitud, la longitud debe ser
 --nombrado para la consulta como “longitud_titulo”.
